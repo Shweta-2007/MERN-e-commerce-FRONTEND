@@ -70,3 +70,14 @@ If at any line you want to copy the whole thing which is written in the same lin
 
 1. created firebase.ts in src folder and .env in root folder
 2. use firebase auth in login page
+3. Toaster && auth in login page
+
+- RTK Query Setup
+
+1. create store
+2. go in main.ts and wrap the app around provider
+3. create store.ts
+4. create userAPI.ts
+5. create api-types and types.ts
+6. put reducer in store
+7. in login page, use all that.
