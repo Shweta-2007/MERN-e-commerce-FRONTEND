@@ -61,3 +61,12 @@ If at any line you want to copy the whole thing which is written in the same lin
 "typescript": "^5.2.2",
 "vite": "^5.0.8"
 }
+
+\*\*STEPS:
+
+- after doing UI part and backend part, start this frontend again
+- install redux toolkit and axios
+- firebase authentication
+
+1. created firebase.ts in src folder and .env in root folder
+2. use firebase auth in login page
