@@ -81,3 +81,9 @@ If at any line you want to copy the whole thing which is written in the same lin
 5. create api-types and types.ts
 6. put reducer in store
 7. in login page, use all that.
+
+\*\*next step:
+
+- User Reducer
+- now use that userReducer in app.ts using selector
+- protecting Routes for Logged In Users:
