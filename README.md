@@ -72,7 +72,7 @@ If at any line you want to copy the whole thing which is written in the same lin
 2. use firebase auth in login page
 3. Toaster && auth in login page
 
-- RTK Query Setup
+- RTK Query Setup for User
 
 1. create store
 2. go in main.ts and wrap the app around provider
@@ -86,4 +86,13 @@ If at any line you want to copy the whole thing which is written in the same lin
 
 - User Reducer
 - now use that userReducer in app.ts using selector
-- protecting Routes for Logged In Users:
+- protecting Routes for Logged In Users: protected-route.tsx in component
+- sign out function in header
+
+\*\*next step:
+
+- RTK Query Setup for Product
+- create productAPI.ts and first made for latest-products
+- made API for admin-all-products
+- made API for categories on search page
+- made API for products on search page
