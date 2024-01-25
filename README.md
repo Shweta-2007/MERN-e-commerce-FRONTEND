@@ -100,3 +100,8 @@ If at any line you want to copy the whole thing which is written in the same lin
 - made API for product detail for admin
 - made API for update product for admin
 - made API for delete product for admin
+
+\*\*next step: Cart Reducer
+
+- in home page, addToCartFunction
+- in search page, addToCartHandler
