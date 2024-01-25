@@ -96,3 +96,7 @@ If at any line you want to copy the whole thing which is written in the same lin
 - made API for admin-all-products
 - made API for categories on search page
 - made API for products on search page
+- made API for create a new product for admin
+- made API for product detail for admin
+- made API for update product for admin
+- made API for delete product for admin
