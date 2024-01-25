@@ -105,3 +105,7 @@ If at any line you want to copy the whole thing which is written in the same lin
 
 - in home page, addToCartFunction
 - in search page, addToCartHandler
+
+\*\*next step: Applying Coupon Code:
+
+- in cart reducer && cart.tsx
