@@ -113,3 +113,12 @@ If at any line you want to copy the whole thing which is written in the same lin
 \*\*nect step: RTK Query for Order
 
 - made all orderAPI
+
+\*\*next step: Placing order after payment
+
+- npm install --save @stripe/react-stripe-js @stripe/stripe-js
+- checkout.tsx in pages
+- made some changes in shipping page
+
+\*\*next step: admin users panel:
+\*\*next step: admin user RTK

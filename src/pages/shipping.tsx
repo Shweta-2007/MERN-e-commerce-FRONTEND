@@ -1,15 +1,20 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { cartReducerInitialState } from "../types/reducer-types";
+import axios from "axios";
+import { server } from "../redux/store";
+import toast from "react-hot-toast";
+import { saveShippingInfo } from "../redux/reducer/cartReducer";
 
 const Shipping = () => {
-  const { cartItems } = useSelector(
+  const { cartItems, total } = useSelector(
     (state: { cartReducer: cartReducerInitialState }) => state.cartReducer
   );
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [shippingInfo, setShippingInfo] = useState({
     address: "",
     city: "",
@@ -25,6 +30,32 @@ const Shipping = () => {
     });
     // Here using above code inside return, it will set the value according to the name which we have assigned to different inputs.
   };
+
+  const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(saveShippingInfo(shippingInfo));
+
+    try {
+      const { data } = await axios.post(
+        `${server}/api/v1/payment/create`,
+        {
+          amount: total,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      navigate("/pay", {
+        state: data.clientSecret,
+      });
+    } catch (error) {
+      console.log(error);
+      toast.error("Something Went Wrong");
+    }
+  };
+
   useEffect(() => {
     if (cartItems.length <= 0) return navigate("/cart");
   }, [cartItems]);
@@ -34,7 +65,7 @@ const Shipping = () => {
       <button className="back-btn" onClick={() => navigate("/cart")}>
         <BiArrowBack />
       </button>
-      <form>
+      <form onSubmit={submitHandler}>
         <h1>Shipping address</h1>
         <input
           required

@@ -13,6 +13,11 @@ export type MessageResponse = {
   message: string;
 };
 
+export type AllUsersResponse = {
+  success: boolean;
+  users: User[];
+};
+
 export type UserResponse = {
   success: boolean;
   user: User;
@@ -24,6 +29,16 @@ export interface AllProductsResponse {
 }
 
 //yhaan success aur products isliye hai q ki latest product ke api me hm success aur product return kar rahe hai.
+
+export type AllOrdersResponse = {
+  success: boolean;
+  orders: Order[];
+};
+
+export type OrderDetailsResponse = {
+  success: boolean;
+  order: Order;
+};
 
 export interface CategoriesResponse {
   success: boolean;
@@ -54,6 +69,11 @@ export type CreateProductRequest = {
   formData: FormData;
 };
 
+export type DeleteUserRequest = {
+  userId: string;
+  adminUserId: string;
+};
+
 export type UpdateProductRequest = {
   userId: string;
   productId: string;
@@ -79,14 +99,4 @@ export type NewOrderRequest = {
 export type UpdateOrderRequest = {
   userId: string;
   orderId: string;
-};
-
-export type AllOrdersResponse = {
-  success: boolean;
-  orders: Order[];
-};
-
-export type OrderDetailsResponse = {
-  success: boolean;
-  order: Order;
 };
