@@ -33,3 +33,28 @@ export interface CartItem {
   photo: string;
   stock: number;
 }
+
+export interface OrderItem {
+  productId: string;
+  price: number;
+  quantity: number;
+  name: string;
+  photo: string;
+  _id: string;
+}
+
+export type Order = {
+  orderItems: OrderItem[];
+  shippingInfo: ShippingInfo;
+  status: string;
+  subtotal: number;
+  tax: number;
+  shippingCharges: number;
+  discount: number;
+  total: number;
+  user: {
+    name: string;
+    _id: string;
+  };
+  _id: string;
+};

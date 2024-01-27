@@ -1,8 +1,14 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { cartReducerInitialState } from "../types/reducer-types";
 
 const Shipping = () => {
+  const { cartItems } = useSelector(
+    (state: { cartReducer: cartReducerInitialState }) => state.cartReducer
+  );
+
   const navigate = useNavigate();
   const [shippingInfo, setShippingInfo] = useState({
     address: "",
@@ -19,6 +25,9 @@ const Shipping = () => {
     });
     // Here using above code inside return, it will set the value according to the name which we have assigned to different inputs.
   };
+  useEffect(() => {
+    if (cartItems.length <= 0) return navigate("/cart");
+  }, [cartItems]);
 
   return (
     <div className="shipping">

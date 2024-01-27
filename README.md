@@ -109,3 +109,7 @@ If at any line you want to copy the whole thing which is written in the same lin
 \*\*next step: Applying Coupon Code:
 
 - in cart reducer && cart.tsx
+
+\*\*nect step: RTK Query for Order
+
+- made all orderAPI
